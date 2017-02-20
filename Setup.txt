@@ -1,2 +1,44 @@
 # Setup
 
+# Pi Z Setup
+Flash the latest Raspbian Jessie
+Connect peripherals
+Ensure keyboard layout is US
+  Note: has defaulted to UK several times, swapping the " and @ keys
+  "sudo raspi-config" - "keyboard layout" - "English(US)"
+Ensure time is correct
+  will prevent wireless connection to the interwebs
+  "sudo date -s "Month Day Hour:Min:Second" "
+    military time
+  "sudo raspi-config" - "set timezone" - "America" - "Los Angeles"
+    US - Pacific seemed to not work and forums suggested it was out of date
+Enable SSH
+  "sudo raspi-config" - "Advanced Options" - "Enable SSH"
+    user: pi  pass: raspberry (default)
+Disable Desktop environment
+  "sudo raspi-config" - "Boot Options" - "Terminal with User Login"
+                                        - "Disable Splash Screen"
+Get ip address
+  "ifconfig"
+  
+# Windows PC Setup (Win10 Pro 64bit)
+install Putty
+install Python2.7 and 3.6
+Enable Internet Sharing on Eth0 (PC-Outside), select Eth1 (PiZ)
+  Note: Eth1 should be set to Automatic for ip address before the Pi is booted, afterwards it will be assigned a static address
+    In my case, 192.168.137.1
+Connect to Pi through Putty
+  SSH, ip address from before, port 22
+  
+# Pi Z Setup Finish
+Install Updates
+  "sudo apt-get update"
+Install Upgrades - If not latest distro of Jessie installed
+  "sudo apt-get upgrade"
+Install Python devs
+  Python comes pre-packages, but not the devs, which are required for wiringpi amonst other things
+  "sudo apt-get python.dev python3.dev"
+Install WiringPi
+  "pip install wiringpi"
+  
+profit
