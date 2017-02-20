@@ -2,7 +2,9 @@
 
 # Pi Z Setup
 Flash the latest Raspbian Jessie
-Connect peripherals
+Connect Power, Display, USB Ethernet Adapter, Mouse, Keyboard
+  Note: Mouse and Keyboard do not always get power/initialize. 
+    Results are the same for both a USB hub (no dedicated power) and a USB Pi HAT
 Ensure keyboard layout is US
   Note: has defaulted to UK several times, swapping the " and @ keys
   "sudo raspi-config" - "keyboard layout" - "English(US)"
@@ -41,4 +43,4 @@ Install Python devs
 Install WiringPi
   "pip install wiringpi"
   
-profit
+# profit
