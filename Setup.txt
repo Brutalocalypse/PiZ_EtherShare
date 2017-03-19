@@ -26,6 +26,7 @@ Get ip address
 # Windows PC Setup (Win10 Pro 64bit)
 install Putty
 install Python2.7 and 3.6
+# For Windows Machines, must enable IPv4 Ping Response in Advanded Firewall Settings
 Enable Internet Sharing on Eth0 (PC-Outside), select Eth1 (PiZ)
   Note: Eth1 should be set to Automatic for ip address before the Pi is booted, afterwards it will be assigned a static address
     In my case, 192.168.137.1
